@@ -26,9 +26,17 @@ void	PhoneBook::SEARCH(void) {
 	getline(std::cin, line);
 	if (std::cin.eof() == 1)
 		return ;
+	for (int i = 0; i < line.length(); i++)
+	{
+		if (std::isdigit(line.at(i)) == 0)
+		{
+			std::cout << "Error: Input is not a number" << std::endl;
+			return ;
+		}
+	}
 	std::stringstream ss(line);
 	ss >> ssi;
-	if (ss.fail() || (line.length() > 1 &&std::isdigit(line.at(1)) == 0))
+	if (ss.fail())
 		std::cout << "Error: Input is not a number" << std::endl;
 	else if (ssi > 8 || ssi < 1)
 		std::cout << "Error: Out of range" << std::endl;

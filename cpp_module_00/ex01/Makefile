@@ -1,5 +1,5 @@
 NAME	=	ex01
-CC		=	clang++
+CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 SRCS	=	Contact.cpp \

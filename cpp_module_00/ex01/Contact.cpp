@@ -24,7 +24,7 @@ void	Contact::setContact(int i) {
 
 void	Contact::displayFormat(std::string str) {
 	if (str.length() > 10)
-		std::cout << std::setw(10) << str.substr(0, 9) << ".";
+		std::cout << std::setw(9) << str.substr(0, 9) << ".";
 	else
 		std::cout << std::setw(10) << str;
 }
