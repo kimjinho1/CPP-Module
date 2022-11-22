@@ -30,12 +30,12 @@ void	Contact::displayFormat(std::string str) {
 }
 
 void	Contact::displayContact(void) {
-	std::string	strId;
 
 	if (this->id == 0)
 		return ;
-	strId = std::to_string(this->id);
-	this->displayFormat(strId);
+	std::stringstream	ss;
+	ss << this->id;
+	this->displayFormat(ss.str());
 	std::cout << "|";
 	this->displayFormat(this->firstName);
 	std::cout << "|";
