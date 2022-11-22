@@ -1,4 +1,4 @@
-#include "Contact.h"
+#include "Contact.hpp"
 
 Contact::Contact() {
 	this->id = 0;

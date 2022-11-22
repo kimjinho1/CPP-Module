@@ -1,4 +1,4 @@
-#include "PhoneBook.h"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) {
     this->idx = 0;
@@ -26,7 +26,7 @@ void	PhoneBook::SEARCH(void) {
 	getline(std::cin, line);
 	if (std::cin.eof() == 1)
 		return ;
-	for (int i = 0; i < line.length(); i++)
+	for (size_t i = 0; i < line.length(); i++)
 	{
 		if (std::isdigit(line.at(i)) == 0)
 		{
