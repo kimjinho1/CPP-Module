@@ -7,10 +7,6 @@ int main(int ac, char **av) {
         return (0);
     }
     Replace replace(av[1], av[2], av[3]);
-    try {
-        replace.replace();
-    } catch (char *e) {
-        std::cout << "Replace Error: " << e << std::endl;
-    }
+    replace.replace();
     return (0);
 }
