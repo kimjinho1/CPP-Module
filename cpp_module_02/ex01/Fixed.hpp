@@ -18,7 +18,7 @@ public:
     ~Fixed();
 
     int     getRawBits() const;
-    void    setRawBits(int raw);
+    void    setRawBits(int const raw);
     int     toInt() const;
     float   toFloat() const;
 };
