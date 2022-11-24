@@ -1,16 +1,22 @@
 #include "Point.hpp"
 
-Fixed   check(Point const a, Point const b, Point const c) {
-    return ((a.getX() - c.getX()) * (b.getY() - c.getY())) - \
-            ((b.getX() - c.getX()) * (a.getY() - c.getY()));
+Fixed   area(Point const a, Point const b, Point const c) {
+    Fixed fixed;
+
+    fixed = ((a.getX() * b.getY()) + (b.getX() * c.getY()) + (c.getX() * a.getY())) - \
+        ((b.getX() * a.getY()) + (c.getX() * b.getY()) + (a.getX() * c.getY()));
+    if (fixed < 0)
+        return fixed / -2;
+    return fixed / 2;
 }
 
 bool    bsp(Point const a, Point const b, Point const c, Point const point) {
-    Fixed c1(check(point, a, b));
-    Fixed c2(check(point, b, c));
-    Fixed c3(check(point, c, a));
+    Fixed s(area(a, b, c));
+    Fixed s1(area(point, b, c));
+    Fixed s2(area(a, point, c));
+    Fixed s3(area(a, b, point));
     
-    if ((c1 > 0 && c2 > 0 && c3 > 0) || (c1 < 0 && c2 < 0 && c3 < 0))
-        return true;
-    return false;
+    if (s1 == 0 || s2 == 0 || s3 == 0)
+        return false;
+    return s == s1 + s2 + s3;
 }
