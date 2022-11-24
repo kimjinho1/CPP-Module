@@ -9,7 +9,6 @@ Point::Point(Point const &other) {
 }
 
 Point &Point::operator=(const Point &other) {
-    std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
         const_cast<Fixed&>(this->x) = other.getX();

@@ -18,8 +18,8 @@ public:
     ~Point();
     Fixed   getX(void) const;
     Fixed   getY(void) const;
-
-    bool    bsp(Point const p, Point const x, Point const y);
 };
+
+bool    bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

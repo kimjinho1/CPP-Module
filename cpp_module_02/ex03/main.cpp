@@ -1,36 +1,15 @@
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main(void) {
-    Fixed       a;
-    Fixed const b(Fixed(5.05f) * Fixed(2));
-    Fixed const c(Fixed(10.00f));
+    Point   a(0, 0);
+    Point   b(0, 16);
+    Point   c(16, 0);
+    Point   point1(4, 4);
+    Point   point2(16, 0);
+    Point   point3(10, 10);
 
-    std::cout << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl << std::endl;
-
-    std::cout << --a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a-- << std::endl;
-    std::cout << a << std::endl << std::endl;
-
-    std::cout << b << std::endl;
-	std::cout << b << " > " << c << ": " << (b > c) << std::endl;
-	std::cout << b << " < " << c << ": " << (b < c) << std::endl;
-	std::cout << b << " >= " << c << ": " << (b >= c) << std::endl;
-	std::cout << b << " <= " << c << ": " << (b <= c) << std::endl;
-	std::cout << b << " == " << c << ": " << (b == c) << std::endl;
-	std::cout << b << " != " << c << ": " << (b != c) << std::endl << std::endl;
-
-	std::cout << "b + 2 = " << b + 2 << std::endl;
-	std::cout << "b - 2 = " << b - 2 << std::endl;
-	std::cout << "b * 2 = " << b * 2 << std::endl;
-	std::cout << "b / 2 = " << b / 2 << std::endl;
-    std::cout << std::endl;
-
-    std::cout << Fixed::max(a, b) << std::endl;
-    std::cout << Fixed::min(a, b) << std::endl << std::endl;
+    std::cout << bsp(a, b, c, point1) << std::endl;
+    std::cout << bsp(a, b, c, point2) << std::endl;
+    std::cout << bsp(a, b, c, point3) << std::endl;
     return 0;
 }
