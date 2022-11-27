@@ -5,10 +5,12 @@ MateriaSource::MateriaSource() {
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other) {
+	// std::cout << "MateriaSource copy constructor called" << std::endl;
 	*this = other;
 }
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &other) {
+	// std::cout << "MateriaSource copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		for(int i = 0; i < 4; ++i)

@@ -1,16 +1,16 @@
 #include "Character.hpp"
 
 Character::Character(const std::string &name): name(name) {
-	std::cout << "Character constructor called" << std::endl;
+	//std::cout << "Character constructor called" << std::endl;
 }
 
 Character::Character(const Character &other) {
-	std::cout << "Character copy constructor called" << std::endl;
+	//std::cout << "Character copy constructor called" << std::endl;
 	*this = other;
 }
 
 Character &Character::operator=(const Character &other) {
-	std::cout << "Character copy assignment operator called" << std::endl;
+	//std::cout << "Character copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		for (int i = 0; i < 4; i++)
@@ -22,7 +22,7 @@ Character &Character::operator=(const Character &other) {
 }
 
 Character::~Character() {
-	std::cout << "Character destructor called" << std::endl;
+	//std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		delete inventory[i];
 }
