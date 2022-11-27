@@ -1,14 +1,14 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() {
-    type = "WrongCat";
     std::cout << "WrongCat constructor called" << std::endl;
+    type = "WrongCat";
 };
 
 WrongCat::WrongCat(std::string name) {
+    std::cout << "WrongCat constructor called" << std::endl;
     type = "WrongCat";
     this->name = name;
-    std::cout << "WrongCat constructor called" << std::endl;
 };
 
 WrongCat::WrongCat(WrongCat const &other) {
