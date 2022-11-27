@@ -58,12 +58,12 @@ void    FragTrap::attack(const std::string &target) {
 void    FragTrap::highFivesGuys(void) {
     if (hitPoints == 0)
     {
-        std::cout << name << " died... can't guardGate" << std::endl;
+        std::cout << name << " died... can't highFives" << std::endl;
         return ;
     }
     if (energyPoints == 0)
     {
-        std::cout << name << "'s energyPoints is 0... can't guardGate" << std::endl;
+        std::cout << name << "'s energyPoints is 0... can't highFives" << std::endl;
         return ;
     }
 	std::cout << name << " high fives!!" << std::endl;
