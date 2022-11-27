@@ -66,7 +66,7 @@ void    ScavTrap::guardGate(void) {
         std::cout << name << "'s energyPoints is 0... can't guardGate" << std::endl;
         return ;
     }
-	std::cout << "ScavTrap " << name << " is now in Gate keeper mode" << std::endl;
+	std::cout << name << " is now in Gate keeper mode" << std::endl;
     energyPoints--;
 }
 

@@ -20,5 +20,8 @@ int main() {
     ScavJinho2.attack("enemy");
     ScavJinho2.beRepaired(40);
     std::cout << std::endl;
+
+    ClapTrap    ScavJinho3("ScavJinho3");
+    std::cout << std::endl;
     return (0);
 }
