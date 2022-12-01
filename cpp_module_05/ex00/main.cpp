@@ -2,7 +2,7 @@
 
 void    testHighConstructor(void) {
     try {
-        Bureaucrat tlc("tlc", 0);
+        Bureaucrat thc("thc", 0);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -11,7 +11,7 @@ void    testHighConstructor(void) {
 
 void    testLowConstructor(void) {
     try {
-        Bureaucrat thc("thc", 200);
+        Bureaucrat tlc("tlc", 200);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;

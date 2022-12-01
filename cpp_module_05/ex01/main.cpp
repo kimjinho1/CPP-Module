@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 void    testHighConstructor(void) {
     try {
-        Bureaucrat tlc("tlc", 0);
+        Form thc("thc", 0, 0);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
@@ -11,68 +12,43 @@ void    testHighConstructor(void) {
 
 void    testLowConstructor(void) {
     try {
-        Bureaucrat thc("thc", 200);
+        Form tlc("tlc", 200, 200);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
     }
 }
 
-void    testWrongIncrement(void) {
+void    testSignSuccess(void) {
     try {
-        Bureaucrat twi("twi", 10);
-        twi.increment(20);
+        Bureaucrat btss("btss", 15);
+        Form ftss("ftss", 20, 30);
+        ftss.beSigned(btss);
+        std::cout << ftss << std::endl;
+        btss.signForm(ftss);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
     }
 }
 
-void    testWrongDecrement(void) {
+void    testSignFail(void) {
     try {
-        Bureaucrat twi("twd", 100);
-        twi.decrement(60);
+        Bureaucrat btsf("btss", 40);
+        Form ftsf("ftss", 20, 30);
+        ftsf.beSigned(btsf);
+        std::cout << ftsf << std::endl;
+        btsf.signForm(ftsf);
     }
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
     }
 }
-
-void    testSuccessCase1(void) {
-    try {
-        Bureaucrat jinho1("jinho1", 100);
-        std::cout << jinho1 << std::endl;
-        jinho1.increment(60);
-        std::cout << jinho1 << std::endl;
-        jinho1.decrement(100);
-        std::cout << jinho1 << std::endl;
-    }
-    catch(const std::exception& e) {
-        std::cout << e.what() << std::endl;
-    }
-}
-
-void    testSuccessCase2(void) {
-    try {
-        Bureaucrat jinho2("jinho2", 1);
-        std::cout << jinho2 << std::endl;
-        jinho2.decrement(149);
-        std::cout << jinho2 << std::endl;
-        jinho2.increment(149);
-        std::cout << jinho2 << std::endl;
-    }
-    catch(const std::exception& e) {
-        std::cout << e.what() << std::endl;
-    }
-}
-
 
 int main() {
     testHighConstructor();  std::cout << std::endl;
     testLowConstructor();   std::cout << std::endl;
-    testWrongIncrement();   std::cout << std::endl;
-    testWrongDecrement();   std::cout << std::endl;
-    testSuccessCase1();     std::cout << std::endl;
-    testSuccessCase2();
+    testSignSuccess();   std::cout << std::endl;
+    testSignFail();   std::cout << std::endl;
     return (0);
 }
