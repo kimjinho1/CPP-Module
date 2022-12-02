@@ -1,9 +1,9 @@
-NAME	=	convert
+NAME	=	ex01
 CC		=	c++
 CFLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
 SRCS	=	main.cpp \
-			Scalar.cpp \
+			Data.cpp \
 
 all		:	$(NAME)
 

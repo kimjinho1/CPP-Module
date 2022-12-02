@@ -1,12 +1,11 @@
-#include <iostream>
-#include "Convert.h"
+#include "Scalar.hpp"
 
 int main(int ac, char **av) {
 	if (ac != 2) {
 		std::cout << "Error: Argument error" << std::endl;
-		return 0;1
+		return 0;
 	}
-	Convert	convert(av[1]);
-	std::cout << convert << std::endl;
+	Scalar	scalar(av[1]);
+	scalar.convert();
 	return 0;
 }
