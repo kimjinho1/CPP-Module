@@ -1,5 +1,5 @@
-#ifndef CONVERT_H
-# define CONVERT_H
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
 
 #include <iostream>
 
