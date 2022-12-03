@@ -11,6 +11,7 @@ int main() {
 	std::cout << "raw: " << raw << std::endl;
 	data2 = deserialize(raw);
 	std::cout << "data2->n: " << data2->getN() << std::endl << std::endl;
+	delete data1;
 
 	int		*a = new int(1000);
 	long 	*aPtr1;
@@ -22,6 +23,7 @@ int main() {
 	std::cout << "*aPtr1: " << *aPtr1 << std::endl;
 	a1 = reinterpret_cast<int*>(aPtr1);
 	std::cout << "*a1: " << *a1 << std::endl << std::endl;
+	delete a;
 
 	char	*aPtr2;
 	int		*a2;
