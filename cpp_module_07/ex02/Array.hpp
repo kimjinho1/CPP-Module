@@ -14,13 +14,13 @@ public:
 		array = new T[_size];
 	}
 
-	Array<T>(unsigned int n) : _size(n) {
+	Array<T>(std::size_t n) : _size(n) {
 		array = new T[_size];
 	}
 
 	Array<T>(Array<T> const &other) : _size(other.size()) {
 		array = new T[_size];
-		for (unsigned int i = 0; i < _size; i++)
+		for (std::size_t i = 0; i < _size; i++)
 			array[i] = other.array[i];
 	}
 
@@ -42,7 +42,13 @@ public:
 			delete[] array;
 	}
 
-	T &operator[](const unsigned int &i) {
+	T &operator[](std::size_t i) {
+		if (i < 0 || i >= _size || array == NULL)
+			throw WrongIndexException();
+		return array[i];
+	}
+
+	T const &operator[](std::size_t i) const {
 		if (i < 0 || i >= _size || array == NULL)
 			throw WrongIndexException();
 		return array[i];

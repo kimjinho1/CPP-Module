@@ -53,6 +53,11 @@ int	main(void)
         numbers[i] = rand();
     for (int i = 0; i < MAX_VAL; i++)
 		std::cout << numbers[i] << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+
+    const Array<int>	test(MAX_VAL);
+	std::cout << test[0] << std::endl;
+
     delete [] mirror;
     return 0;
 }

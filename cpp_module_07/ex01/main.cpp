@@ -4,12 +4,20 @@ void	printInt(int const &n) {
 	std::cout << n << std::endl;
 }
 
+void	add1(int &n) {
+	n += 1;
+}
+
 void	add42(std::string const &str) {
 	std::cout << str << " 42" << std::endl;
 }
 
 int main(void) {
 	int intArr[5] = {0, 1, 2, 3, 4};
+	::iter<int>(intArr, 5, printInt);
+	std::cout << std::endl;
+
+	::iter<int>(intArr, 5, add1);
 	::iter<int>(intArr, 5, printInt);
 	std::cout << std::endl;
 
