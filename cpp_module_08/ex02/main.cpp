@@ -29,12 +29,11 @@ int main(void) {
 	mstack2.push("Module");
 	mstack2.push("!!!");
 	std::cout << "mstack2 size: " << mstack2.size() << std::endl;
-	MutantStack<std::string>::iterators	start2;
-	MutantStack<std::string>::iterators	end2 = mstack2.end();
+	MutantStack<std::string>::const_iterator	start2;
+	MutantStack<std::string>::const_iterator	end2 = mstack2.end();
 	for (start2 = mstack2.begin(); start2 != end2; start2++)
 		std::cout << *start2 << " ";
 	std::cout << std::endl;
 	std::cout << "----------------------" << std::endl;
-
 	return 0;
 }

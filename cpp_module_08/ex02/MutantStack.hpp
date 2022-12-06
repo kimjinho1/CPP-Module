@@ -18,8 +18,6 @@ public:
 
 	typedef typename std::stack<T>::container_type::iterator				iterators;
 	typedef typename std::stack<T>::container_type::const_iterator			const_iterator;
-	typedef typename std::stack<T>::container_type::reverse_iterator		reverse_iterator;
-	typedef typename std::stack<T>::container_type::const_reverse_iterator	const_reverse_iterator;
 
 	iterators begin(void) {
 		return std::stack<T>::c.begin();
