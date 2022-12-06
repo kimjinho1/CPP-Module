@@ -43,13 +43,13 @@ public:
 	}
 
 	T &operator[](std::size_t i) {
-		if (i < 0 || i >= _size || array == NULL)
+		if (array == NULL || i < 0 || i >= _size)
 			throw WrongIndexException();
 		return array[i];
 	}
 
 	T const &operator[](std::size_t i) const {
-		if (i < 0 || i >= _size || array == NULL)
+		if (array == NULL || i < 0 || i >= _size)
 			throw WrongIndexException();
 		return array[i];
 	}
