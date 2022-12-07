@@ -17,24 +17,14 @@ public:
 	~MutantStack() {};
 
 	typedef typename std::stack<T>::container_type::iterator
-						iterators;
-	typedef typename std::stack<T>::container_type::const_iterator
-						const_iterator;
+						iterator;
 
-	iterators begin(void) {
+	iterator begin(void) {
 		return std::stack<T>::c.begin();
 	}
 
-	iterators end(void) {
+	iterator end(void) {
 		return std::stack<T>::c.end();
-	}
-
-	const_iterator cbegin(void) {
-		return std::stack<T>::c.cbegin();
-	}
-
-	const_iterator cend(void) {
-		return std::stack<T>::c.cend();
 	}
 };
 

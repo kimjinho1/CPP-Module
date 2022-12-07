@@ -15,8 +15,8 @@ int main(void) {
 
 	for (int i = 0; i < 10; i++)
 		mstack.push(i);
-	MutantStack<int>::iterators	start = mstack.begin();
-	MutantStack<int>::iterators	end = mstack.end();
+	MutantStack<int>::iterator	start = mstack.begin();
+	MutantStack<int>::iterator	end = mstack.end();
 
 	std::cout << "*start: " << *start << std::endl;
 	start++;
@@ -38,8 +38,8 @@ int main(void) {
 	std::cout << "mstack2 size: " << mstack2.size() << std::endl;
 	std::cout << "----------------------" << std::endl;
 
-	MutantStack<std::string>::const_iterator	start2 = mstack2.cbegin();
-	MutantStack<std::string>::const_iterator	end2 = mstack2.cend();
+	MutantStack<std::string>::iterator	start2 = mstack2.begin();
+	MutantStack<std::string>::iterator	end2 = mstack2.end();
 
 	std::cout << "*start2: " << *start2 << std::endl;
 	start2++;

@@ -34,8 +34,16 @@ const char *Span::AlreadyFullException::what() const throw() {
     return "Error: Already full";
 }
 
-const char *Span::InsufficientNumberOfComponent::what() const throw() {
+const char *Span::InsufficientNumberOfComponentException::what() const throw() {
 	return "Error: Insufficient number of components";
+}
+
+void    Span::print(unsigned int start, unsigned int n) {
+    for (unsigned int i = start; i < start + n; i++) {
+        if (i > _n)
+            throw AlreadyFullException();
+        std::cout << _vec[i] << std::endl;
+    }
 }
 
 void    Span::addNumber(int n) {
@@ -46,16 +54,17 @@ void    Span::addNumber(int n) {
     _vec.push_back(n);
 }
 
-void	Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
-    for (std::vector<int>::iterator i = begin; i != end; i++)
-        addNumber(*i);
+void	Span::fill(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+    if (_n == 0)
+        throw NoSpanException();
+    _vec.insert(_vec.begin(), begin, end);
 }
 
 int Span::shortestSpan(void) {
     if (_n == 0)
         throw NoSpanException();
     if (_vec.size() < 2)
-        throw InsufficientNumberOfComponent();
+        throw InsufficientNumberOfComponentException();
 
     std::vector<int>    vec = getVec();
     std::sort(vec.begin(), vec.end());
@@ -72,7 +81,7 @@ int Span::longestSpan(void) {
     if (_n == 0)
         throw NoSpanException();
     if (_vec.size() < 2)
-        throw InsufficientNumberOfComponent();
+        throw InsufficientNumberOfComponentException();
 
     return *std::max_element(_vec.begin(), _vec.end()) \
             - *std::min_element(_vec.begin(), _vec.end());

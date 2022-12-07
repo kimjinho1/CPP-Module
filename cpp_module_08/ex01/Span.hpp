@@ -31,13 +31,19 @@ public:
 			const char *what() const throw();
 	};
 
-	class InsufficientNumberOfComponent : public std::exception {
+	class InsufficientNumberOfComponentException : public std::exception {
 		public:
 			const char *what() const throw();
 	};
 
+	class WorngIndexError : public std::exception {
+		public:
+			const char *what() const throw();
+	};
+
+	void	print(unsigned int start, unsigned int n);
 	void	addNumber(int n);
-	void	addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+	void	fill(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 	int		shortestSpan(void);
 	int		longestSpan(void);
 };
